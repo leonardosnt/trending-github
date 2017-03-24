@@ -29,7 +29,8 @@ module.exports = function (period, language) {
             description: $(repo).find('p', '.py-1').text().trim() || null,
             language: $(repo).find('[itemprop=programmingLanguage]').text().trim(),
             stars: parseInt($(repo).find('[aria-label=Stargazers]').text().trim().replace(',', '') || 0),
-            forks: parseInt($(repo).find('[aria-label=Forks]').text().trim().replace(',', '') || 0)
+            forks: parseInt($(repo).find('[aria-label=Forks]').text().trim().replace(',', '') || 0),
+            starsToday: parseInt($(repo).find('.float-right').text().match(/\d+/)[0])
           });
         });
 
