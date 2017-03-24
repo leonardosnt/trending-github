@@ -30,7 +30,7 @@ module.exports = function (period, language) {
             language: $(repo).find('[itemprop=programmingLanguage]').text().trim(),
             stars: parseInt($(repo).find('[aria-label=Stargazers]').text().trim().replace(',', '') || 0),
             forks: parseInt($(repo).find('[aria-label=Forks]').text().trim().replace(',', '') || 0),
-            starsToday: parseInt($(repo).find('.float-right').text().match(/\d+/)[0])
+            newStars: parseInt($(repo).find('.float-right').text().match(/\d+(?:[\.\,]\d+)?/g)[0].replace(',', ''))
           });
         });
 
